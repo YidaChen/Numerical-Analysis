@@ -5,14 +5,15 @@ x1 → f(x1) = y1
 if |y1| < |y0|, x0 = x1
 if |y1| >= |y0|, reset x1
 */
-function randn_bm(){ // Standard Normal variate using Box-Muller transform.
+// Standard Normal variate using Box-Muller transform.
+function randn_bm(){
     var u = 1 - Math.random(); // Subtraction to flip [0, 1) to (0, 1].
     var v = 1 - Math.random();
     return Math.sqrt( -2.0 * Math.log( u ) ) * Math.cos( 2.0 * Math.PI * v );
 }
 var M = Math;
-function f(x) //f(x) = e^x - 2x -2
-{
+//f(x) = e^x - 2x -2
+function f(x){
     return M.exp(x) - 2*x - 2;
 }
 var x0 = 0.68;
